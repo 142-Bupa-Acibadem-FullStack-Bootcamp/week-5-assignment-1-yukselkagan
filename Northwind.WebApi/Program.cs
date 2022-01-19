@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Northwind.Dal.Seed;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,18 @@ namespace Northwind.WebApi
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            //CreateHostBuilder(args).Build().Run();
+
+            IHost host = CreateHostBuilder(args).Build();
+            using IServiceScope scope = host.Services.CreateScope();
+            IServiceProvider services = scope.ServiceProvider;
+
+            UserSeed userSeed = new UserSeed(services);
+            userSeed.SeedUser();
+
+            host.Run();
+
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

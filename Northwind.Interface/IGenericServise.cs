@@ -13,6 +13,7 @@ namespace Northwind.Interface
         IResponse<List<TDto>> GetAll();
         IResponse<List<TDto>> GetAll(Expression<Func<T,bool>> expression);
         IResponse<TDto> Find(int id);
+        IResponse<TDto> Find(string id);
         IQueryable<T> GetIQueryable();
         IResponse<TDto> Add(TDto item, bool saveChanges = true);
         Task<TDto> AddAsync(TDto item);

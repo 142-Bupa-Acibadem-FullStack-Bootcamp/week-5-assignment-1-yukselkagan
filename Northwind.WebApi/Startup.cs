@@ -76,17 +76,77 @@ namespace Northwind.WebApi
 
             #endregion
 
-            #region ServiceSection
-            services.AddScoped<IOrderService, OrderManager>();
-            services.AddScoped<ICustomerService, CustomerManager>();
-            services.AddScoped<IUserService, UserManager>();
-            #endregion
-
             #region RepositorySection
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IAlphabeticalListOfProductRepository, AlphabeticalListOfProductRepository>();
+            services.AddScoped<ICategorySalesFor1997Repository, CategorySalesFor1997Repository>();
+            services.AddScoped<ICurrentProductListRepository, CurrentProductListRepository>();
+            services.AddScoped<ICustomerAndSuppliersByCityRepository, CustomerAndSuppliersByCityRepository>();
+            services.AddScoped<ICustomerCustomerDemoRepository, CustomerCustomerDemoRepository>();
+            services.AddScoped<ICustomerDemographicRepository, CustomerDemographicRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IEmployeeTerritoryRepository, EmployeeTerritoryRepository>();
+            services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+            services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
+            services.AddScoped<IProductsAboveAveragePriceRepository, ProductsAboveAveragePriceRepository>();
+            services.AddScoped<IProductSalesFor1997Repository, ProductSalesFor1997Repository>();
+            services.AddScoped<IProductsByCategoryRepository, ProductsByCategoryRepository>();
+            services.AddScoped<IOrderDetailsExtendedRepository, OrderDetailsExtendedRepository>();
+            services.AddScoped<IOrdersQryRepository, OrdersQryRepository>();
+            services.AddScoped<IOrderSubtotalRepository, OrderSubtotalRepository>();
+            services.AddScoped<IQuarterlyOrderRepository, QuarterlyOrderRepository>();
+            services.AddScoped<IRegionRepository, RegionRepository>();
+            services.AddScoped<ISalesByCategoryRepository, SalesByCategoryRepository>();
+            services.AddScoped<ISalesTotalsByAmountRepository, SalesTotalsByAmountRepository>();
+            services.AddScoped<IShipperRepository, ShipperRepository>();
+            services.AddScoped<ISummaryOfSalesByQuarterRepository, SummaryOfSalesByQuarterRepository>();
+            services.AddScoped<ISummaryOfSalesByYearRepository, SummaryOfSalesByYearRepository>();
+            services.AddScoped<ISupplierRepository, SupplierRepository>();
+            services.AddScoped<ITerritoryRepository, TerritoryRepository>();
             #endregion
+
+
+
+            #region ServiceSection
+            services.AddScoped<IOrderService, OrderManager>();
+            services.AddScoped<ICustomerService, CustomerManager>();
+            services.AddScoped<IUserService, UserManager>();
+
+            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<IAlphabeticalListOfProductService, AlphabeticalListOfProductManager>();
+            services.AddScoped<ICategorySalesFor1997Service, CategorySalesFor1997Manager>();
+            services.AddScoped<ICurrentProductListService, CurrentProductListManager>();
+            services.AddScoped<ICustomerAndSuppliersByCityService, CustomerAndSuppliersByCityManager>();
+            services.AddScoped<ICustomerCustomerDemoService, CustomerCustomerDemoManager>();
+            services.AddScoped<ICustomerDemographicService, CustomerDemographicManager>();
+            services.AddScoped<IEmployeeService, EmployeeManager>();
+            services.AddScoped<IEmployeeTerritoryService, EmployeeTerritoryManager>();
+            services.AddScoped<IInvoiceService, InvoiceManager>();
+            services.AddScoped<IOrderDetailService, OrderDetailManager>();
+            services.AddScoped<IProductsAboveAveragePriceService, ProductsAboveAveragePriceManager>();
+            services.AddScoped<IProductSalesFor1997Service, ProductSalesFor1997Manager>();
+            services.AddScoped<IProductsByCategoryService, ProductsByCategoryManager>();
+            services.AddScoped<IOrderDetailsExtendedService, OrderDetailsExtendedManager>();
+            services.AddScoped<IOrdersQryService, OrdersQryManager>();
+            services.AddScoped<IOrderSubtotalService, OrderSubtotalManager>();
+            services.AddScoped<IQuarterlyOrderService, QuarterlyOrderManager>();
+            services.AddScoped<IRegionService, RegionManager>();
+            services.AddScoped<ISalesByCategoryService, SalesByCategoryManager>();
+            services.AddScoped<ISalesTotalsByAmountService, SalesTotalsByAmountManager>();
+            services.AddScoped<IShipperService, ShipperManager>();
+            services.AddScoped<ISummaryOfSalesByQuarterService, SummaryOfSalesByQuarterManager>();
+            services.AddScoped<ISummaryOfSalesByYearService, SummaryOfSalesByYearManager>();
+            services.AddScoped<ISupplierService, SupplierManager>();
+            services.AddScoped<ITerritoryService, TerritoryManager>();
+            #endregion
+
+
 
             #region UnitOfWork
             services.AddScoped<IUnitOfWork, UnitOfWork>();

@@ -54,6 +54,11 @@ namespace Northwind.Dal.Concrete.Entityframework.Repository
             return dbset.Find(id);
         }
 
+        public T Find(string id)
+        {
+            return dbset.Find(id);
+        }
+
         public List<T> GetAll()
         {
             return dbset.ToList();

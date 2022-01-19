@@ -10,5 +10,7 @@ namespace Northwind.Dal.Abstract
     public interface IUserRepository
     {
         User Login(User login);
+
+        void SeedUser(User newUser);
     }
 }

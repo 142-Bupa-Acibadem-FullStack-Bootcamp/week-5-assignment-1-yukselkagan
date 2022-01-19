@@ -26,5 +26,31 @@ namespace Northwind.Dal.Concrete.Entityframework.Repository
 
             return user;
         }
+
+        public void SeedUser(User newUser)
+        {
+
+            //ResetUsers();
+            if (dbset.Any()) return;
+
+
+
+            dbset.Add(newUser);
+            context.SaveChanges();
+
+        }
+
+        public void ResetUsers()
+        {
+            foreach(var item in dbset)
+            {
+                dbset.Remove(item);
+            }
+
+        }
+
+
+
+
     }
 }

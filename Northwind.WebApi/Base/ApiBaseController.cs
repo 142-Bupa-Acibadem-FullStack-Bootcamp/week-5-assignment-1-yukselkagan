@@ -24,13 +24,24 @@ namespace Northwind.WebApi.Base
             this.service = service;
         }
 
+
+
         [HttpGet("Find")]
-        [AllowAnonymous]
-        public IResponse<TDto> Find(int id)
+        public IResponse<TDto> Find(string id)
         {
+
+
+
             try
             {
-                var entity=  service.Find(id);
+
+                var entity = service.Find(id);
+                if (Int32.TryParse(id, out int intId))
+                {
+                    entity = service.Find(intId);
+                }
+
+                
 
                 return entity;
             }
